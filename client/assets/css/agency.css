@@ -755,6 +755,13 @@ ul.social-buttons li a {
     transition: all .3s;
 }
 
+ul.social-buttons li a.large {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  line-height: 90px;
+}
+
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {

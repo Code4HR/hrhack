@@ -8,6 +8,7 @@
             <slide style="background: #000;" ng-repeat="slide in slides" active="slide.active">
                 <img style="opacity: .6 ;" src="{{slide.image}}">
                 <div class="carousel-caption">
+                    <p class="slide-category">{{slide.category}}</p>
                     <h4 class="slide-title">{{slide.title}}</h4>
                     <p class="slide-description">{{slide.description}}</p>
                     <p class="slide-location">{{slide.location}}</p>
@@ -28,8 +29,8 @@
         </div>
         <div class="row text-center">
             <div class="col-md-3">
-                <span class="fa-stack fa-5x">
-                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <span class="fa-stack fa-5x fa-green">
+                    <i class="fa fa-circle fa-stack-2x fa-green"></i>
                     <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="service-heading">Lorem ipsum dolor sit amet.</h4>
@@ -37,7 +38,7 @@
             </div>
             <div class="col-md-3">
                 <span class="fa-stack fa-5x">
-                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-circle fa-stack-2x fa-blue"></i>
                     <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="service-heading">Lorem ipsum dolor sit amet.</h4>
@@ -45,7 +46,7 @@
             </div>
             <div class="col-md-3">
                 <span class="fa-stack fa-5x">
-                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-circle fa-stack-2x fa-yellow"></i>
                     <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="service-heading">Lorem ipsum dolor sit amet.</h4>
@@ -53,7 +54,7 @@
             </div>
             <div class="col-md-3">
                 <span class="fa-stack fa-5x">
-                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-circle fa-stack-2x fa-red"></i>
                     <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
                 </span>
                 <h4 class="service-heading">Lorem ipsum dolor sit amet.</h4>

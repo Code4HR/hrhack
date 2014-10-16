@@ -1,20 +1,41 @@
 'use strict';
 
 function PetitionsService($q, $http) {
-  var url = 'https://api.mongolab.com/api/1/databases/civicstarter/collections/Petition?apiKey=',
-    apiKey = '9rLkL7jBXiss089QQhpDsvrsKZjegWW1';
+  var apiUrlBase = 'https://api.mongolab.com/api/1/databases/civicstarter/collections/Petition';
+  var key = '?apiKey=9rLkL7jBXiss089QQhpDsvrsKZjegWW1';
 
-  function get() {
-    var defer = $q.defer(),
-      requestUri = url + apiKey;
+  var getAll = function() {
+    var defer = $q.defer();
+    var requestUri = apiUrlBase + key;
 
     $http.get(requestUri).success(function(response) {
       defer.resolve(response);
     }).error(function(error) {
-      throw error;
+      defer.reject(error);
     });
 
     return defer.promise;
+  }
+
+  var getOne = function(id) {
+    var defer = $q.defer();
+    var requestUri = apiUrlBase + '/' + id + key;
+
+    $http.get(requestUri).success(function(response) {
+      defer.resolve(response);
+    }).error(function(error) {
+      defer.reject(error);
+    });
+
+    return defer.promise;
+  };
+
+  var get = function(id) {
+    if (typeof id === "undefined") {
+      return getAll();
+    } else {
+      return getOne(id);
+    }
   }
 
   return {

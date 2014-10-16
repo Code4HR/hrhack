@@ -1,5 +1,5 @@
 <!-- Header -->
-<header style="background-image:url('/assets/images/skatepark2.jpg')">
+<header style="background-image:url('{{ petition.image[0].fileName }}')">
     <div class="container">
         <div class="intro-text">
             <div class="intro-lead-in">
@@ -62,11 +62,11 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h2 style="padding-bottom:30px;color:white">Signers</h1>
+        <h2 style="padding-bottom:30px;color:white">Signers ({{ petition.signedBy.length }})</h1>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-1" ng-repeat="signer in petition.signedBy[0].slice(0, 6)">
+      <div class="col-sm-1" ng-repeat="signer in petition.signedBy">
         <div class="team-member">
             {{ signer.userDetail.nameFirst }} {{ signer.userDetail.nameLast }}
             <img src="{{ signer.userDetail.profileImage }}" class="img-responsive img-circle" alt="">

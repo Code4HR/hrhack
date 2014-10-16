@@ -10,7 +10,8 @@ function CarouselCtrl($scope, petitions) {
 				title: item.petition.name,
 				description: item.petition.description,
 				image: item.petition.image[0].fileName,
-				location: item.petition.location.city + ', ' + item.petition.location.state
+				location: item.petition.location.city + ', ' + item.petition.location.state,
+				category: item.petition.category
 			});
 		});
 	});

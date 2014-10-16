@@ -31,6 +31,24 @@
  * App-wide Styles
  */
 
+
+
+.fa-blue {
+    color: rgba(63, 131, 179, .75);    
+}
+
+.fa-green {
+    color: rgba(49, 155, 75, 0.75)
+}
+
+.fa-yellow {
+    color: rgba(254, 209, 54, 0.75);    
+}
+
+.fa-red {
+    color: rgba(179, 63, 63, 0.75)   
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -38,8 +56,15 @@
     padding: 0.2em 0;
 }   
 
-#services {
-    padding: 20px;
+.slide-category {
+    background: rgba(49, 155, 75, 0.75);
+    color: #fff;
+    font-size: 2em;
+    max-height: 60px;
+    max-width: 350px;
+    border-radius: 8px;
+    margin: auto;
+    font-family: 'Helvetica';
 }
 
 .slide-title {
@@ -59,12 +84,12 @@
     .slide-description {
         display: none;
     }
-    .slide-location {
-
-    }
     .slide-title {
         font-size: 2em;
-        transition: font-size .75s ease-in;
+    }
+    .slide-category {
+        font-size: .8em;
+        max-width: 150px;
     }
 }
 
@@ -81,7 +106,10 @@
     }
     .slide-title {
         font-size: 2em;
-        transition: font-size .75s ease-in;
+    }
+    .slide-category {
+        font-size: 1em;
+        max-width: 175px;
     }
 }
 
@@ -95,6 +123,10 @@
     .slide-title {
         font-size: 2.5em;
     }
+    .slide-category {
+        font-size: 1.2em;
+        max-width: 200px;
+    }
 }
 
 @media screen and (min-width: 900px) {
@@ -104,13 +136,39 @@
     .slide-title {
         font-size: 3.5em;
     }
+    .slide-category {
+        font-size: 1.5em;
+        max-width: 250px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
+    .col-md-3 {
+        width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 1150px) {
     .slide-description {
-        font-size: 3.5em;
+        font-size: 3em;
+    }
+    .slide-title {
+        font-size: 4.25em;
+    }
+    .slide-category {
+        font-size: 1.7em;
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .slide-description {
+        font-size: 3.2em;
     }
     .slide-title {
         font-size: 5em;
+    }
+    .col-md-3 {
+        width: 25%;
     }
 }

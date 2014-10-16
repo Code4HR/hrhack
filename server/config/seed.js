@@ -32,15 +32,24 @@ Thing.find({}).remove(function() {
 
 User.find({}).remove(function() {
   User.create({
+    userDetail: {
+      nameFirst: 'Kyle',
+      nameLast: 'Almas',
+      email: 'kylealmas@gmail.com',
+      profileImage: 'test'
+    },
     provider: 'local',
-    name: 'Test User',
-    email: 'test@test.com',
+    role: 'user',
     password: 'test'
   }, {
+    userDetail: {
+      nameFirst: 'Admin',
+      nameLast: 'Admin',
+      email: 'admin@admin.com',
+      profileImage: 'test'
+    },
     provider: 'local',
     role: 'admin',
-    name: 'Admin',
-    email: 'admin@admin.com',
     password: 'admin'
   }, function() {
       console.log('finished populating users');

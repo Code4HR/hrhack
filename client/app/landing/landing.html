@@ -1,0 +1,98 @@
+<!-- Header -->
+<header style="background-image:url('http://i.imgur.com/L6OAEAa.jpg')">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in text-success">
+              <span class="glyphicon glyphicon-map-marker" />
+              Coming soon to Hampton Roads
+            </div>
+            <div class="intro-heading" style="margin-bottom:20px">Civic Starter</div>
+            <div class="row" style="margin-bottom:15px">
+              <div class="col-md-8 col-md-offset-2" style="background-color:rgba(0,0,0,0.5)">
+                <h4 class="text-primary">Civic Starter empowers us to fund, support and get government buy-in for community projects.</h4>
+              </div>
+            </div>
+            <div class="row" style="margin-bottom:15px">
+              <div class="col-md-6 col-md-offset-3">
+                <form ng-show="notSubmitted">
+                  <div class="input-group input-group-lg">
+                    <input type="text" ng-class="{'has-error': notValid}" class="form-control" ng-model="email" placeholder="EMAIL ADDRESS">
+                    <a href="#" ng-disabled="notValid" ng-click="registerNotify()"
+                      class="input-group-addon page-scroll btn btn-xl" style="margin-bottom:30px">
+                      Keep Me Notified
+                    </a>
+                  </div>
+
+                </form>
+                <div ng-hide="notSubmitted" style="padding:12px; margin-bottom:0px" class="alert alert-success">
+                  Thanks for your intrest. We will follow up soon.
+                </div>
+
+              </div>
+            </div>
+
+            <!--
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4">
+                  <ul class="list-inline social-buttons">
+                      <li>
+                        <a class="large" href="#"><i class="fa fa-2x fa-twitter"></i></a>
+                      </li>
+                      <li><a class="large" href="#"><i class="fa fa-2x fa-facebook"></i></a>
+                      </li>
+                      <li><a class="large" href="#"><i class="fa fa-2x fa-google-plus"></i></a>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+          -->
+        </div>
+    </div>
+</header>
+
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>How It Works</h2>
+                <h5 class="" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-6 col-lg-3">
+                <span class="fa-stack fa-5x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Encourages volunteerism and even create jobs</h4>
+                <p class="text-muted">Projects that require volunteer hours can collect pledges on the project profile page.</p>
+            </div>
+            <div class="col-md-3">
+                <span class="fa-stack fa-5x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Enable local governments to take action</h4>
+                <p class="text-muted">Civicstarter has relationships with local governments and media outlets to not only get the word out, but also move larger projects through the legislation process.</p>
+            </div>
+            <div class="col-md-3">
+                <span class="fa-stack fa-5x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Projects are funded by the people of a community</h4>
+                <p class="text-muted">Once projects collect the necessary number of signatures the project is eligible for funding. The power is now in the hands of the community members.</p>
+            </div>
+            <div class="col-md-3">
+                <span class="fa-stack fa-5x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Gain support through petition signatures</h4>
+                <p class="text-muted">Users create petitions to start projects or purchase resources for their community. A determined number of signatures is necessary to move a project forward.</p>
+            </div>
+        </div>
+    </div>
+</section>

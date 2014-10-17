@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hrhackApp')
-  .controller('CreateCtrl', ['petitions', '$scope', function(petitions, $scope) {
+  .controller('CreateCtrl', ['petitions', '$scope', '$location', function(petitions, $scope, $location) {
     $scope.petition = {};
     $scope.petition.name = 'Kyle';
     $scope.petition.description = 'Cool Project';
@@ -27,7 +27,7 @@ angular.module('hrhackApp')
         };
 
         petitions.create(container).then(function(response) {
-          console.log(response);
+          $location.path('/petition/'+response._id['$old']);
         }, function(error) {
           console.log(error);
         });

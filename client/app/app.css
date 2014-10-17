@@ -27,6 +27,47 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot?-w8a1gr');
+    src:url('fonts/icomoon.eot?#iefix-w8a1gr') format('embedded-opentype'),
+        url('fonts/icomoon.woff?-w8a1gr') format('woff'),
+        url('fonts/icomoon.ttf?-w8a1gr') format('truetype'),
+        url('fonts/icomoon.svg?-w8a1gr#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    top: 25px;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-signature2 {
+    left: 5px !important;
+    top: 30px !important;
+}
+
+.icon-white59 {
+    font-size: 2em !important;
+    top: -7px !important;
+}
+
+.icon-worker5 {
+    left: 7px !important;
+    top: 30px !important;
+}
+
 /**
  * App-wide Styles
  */

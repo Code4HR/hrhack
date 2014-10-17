@@ -6,6 +6,7 @@ function CarouselCtrl($scope, petitions) {
 
 	petitions.get().then(function(response) {
 		response.sort(function(a, b) {
+			console.log(a, b);
 			return a.petition.sortOrder - b.petition.sortOrder;
 		});
 		response.forEach(function(item) {

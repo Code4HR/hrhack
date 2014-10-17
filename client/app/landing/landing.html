@@ -1,6 +1,6 @@
 <!-- Header -->
 <header style="background-image:url('http://i.imgur.com/L6OAEAa.jpg')">
-    <div class="container">
+<!--     <div class="container">
         <div class="intro-text">
             <div class="intro-lead-in">
               <span class="glyphicon glyphicon-map-marker" />
@@ -27,10 +27,9 @@
                 <div ng-hide="notSubmitted" style="padding:12px; margin-bottom:0px" class="alert alert-success">
                   Thanks for your intrest. We will follow up soon.
                 </div>
-
               </div>
             </div>
-            <!--
+            
             <div class="row">
               <div class="col-md-4 col-md-offset-4">
                   <ul class="list-inline social-buttons">
@@ -46,8 +45,35 @@
                   </ul>
               </div>
             </div>
-          -->
+          
         </div>
+    </div> -->
+      <div class="slider" ng-controller="LandingCtrl">
+        <carousel interval="myInterval">
+            <slide style="background: #000;" active="slide.active">
+                <img style="opacity: .6;" src="{{slide.image}}">
+                <div class="carousel-caption">
+                  <p class="slide-category long-category">{{slide.category}}</p>
+                  <h4 class="slide-title">{{slide.title}}</h4>
+                  <p class="slide-description">{{slide.description}}</p>
+                  <div class="row" style="margin-bottom:15px">
+                    <div class="col-md-6 col-md-offset-3">
+                      <form ng-show="notSubmitted">
+                          <input type="text" ng-class="{'has-error': notValid}" class="form-control" ng-model="email" placeholder="EMAIL ADDRESS">
+                          <a href="#" ng-disabled="notValid" ng-click="registerNotify()"
+                          class="keep-me-notified" style="margin-bottom:30px">
+                          Keep Me Notified
+                          </a>
+                        
+                      </form>
+                      <div ng-hide="notSubmitted" style="padding:12px; margin-bottom:0px" class="alert alert-success">
+                      Thanks for your intrest. We will follow up soon.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </slide>
+        </carousel>
     </div>
 </header>
 

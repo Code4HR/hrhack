@@ -45,7 +45,7 @@
     <![endif]-->
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavbarCtrl">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -70,8 +70,18 @@
                     <li>
                         <a class="page-scroll" href="/">How It Works</a>
                     </li>
+                    <li ng-hide="isLoggedIn()" class="active">
+                        <a href="/login">Login</a>
+                    </li>
+                    <li ng-show="isLoggedIn()">
+                        <a href="/settings">Hello {{ getCurrentUser().name }}</a>
+                    </li>
+                    <li ng-show="isLoggedIn()" class="active">
+                        <a href="" ng-click="logout()">Logout</a>
+                    </li>
                 </ul>
             </div>
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->

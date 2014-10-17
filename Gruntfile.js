@@ -344,7 +344,7 @@ module.exports = function (grunt) {
             '.htaccess',
             'bower_components/**/*',
             'assets/images/{,*/}*.{webp}',
-            'assets/fonts/**/*',
+            'assets/fonts/*',
             'assets/css/**/*',
             'assets/font-awesome-4.1.0/**/*',
             'assets/img/**/*',
@@ -610,8 +610,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
+    // 'newer:jshint',
+    // 'test',
     'build'
   ]);
 };

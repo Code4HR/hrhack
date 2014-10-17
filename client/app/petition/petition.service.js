@@ -1,12 +1,10 @@
 'use strict';
 
 function PetitionsService($q, $http) {
-  var apiUrlBase = 'https://api.mongolab.com/api/1/databases/civicstarter/collections/Petition';
-  var key = '?apiKey=9rLkL7jBXiss089QQhpDsvrsKZjegWW1';
-
+  
   var getAll = function() {
     var defer = $q.defer();
-    var requestUri = apiUrlBase + key;
+    var requestUri = '/api/petitions';
 
     $http.get(requestUri).success(function(response) {
       defer.resolve(response);
@@ -19,7 +17,7 @@ function PetitionsService($q, $http) {
 
   var getOne = function(id) {
     var defer = $q.defer();
-    var requestUri = apiUrlBase + '/' + id + key;
+    var requestUri = '/api/petitions/' + id;
 
     $http.get(requestUri).success(function(response) {
       defer.resolve(response);

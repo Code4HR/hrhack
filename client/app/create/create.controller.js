@@ -27,7 +27,8 @@ angular.module('hrhackApp')
         };
 
         petitions.create(container).then(function(response) {
-          $location.path('/petition/'+response._id['$old']);
+          console.log(response);
+          $location.path('/petition/'+response._id['$oid']);
         }, function(error) {
           console.log(error);
         });

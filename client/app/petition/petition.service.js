@@ -15,7 +15,7 @@ function PetitionsService($q, $http) {
     });
 
     return defer.promise;
-  }
+  };
 
   var getOne = function(id) {
     var defer = $q.defer();
@@ -36,10 +36,24 @@ function PetitionsService($q, $http) {
     } else {
       return getOne(id);
     }
-  }
+  };
+
+  var create = function(petition) {
+    var defer = $q.defer();
+    var requestUri = apiUrlBase + key;
+
+    $http.post(requestUri, petition).success(function(response) {
+      defer.resolve(response);
+    }).error(function(error) {
+      defer.reject(error);
+    });
+
+    return defer.promise;
+  };
 
   return {
-    get: get
+    get: get,
+    create: create
   };
 }
 

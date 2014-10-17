@@ -57,6 +57,23 @@ exports.create = function(req, res) {
   });
 };
 
+// Updates a thing in the DB.
+exports.update = function(req, res) {
+
+  var options = {
+    uri: apiUrlBase + '/' + req.params.id + key,
+    method: 'PUT',
+    json: req.body
+  };
+  request(options, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      return res.json(200, body);
+    }
+    
+    handleError(res, response.statusCode, error);
+  });
+};
+
 // // Updates an existing thing in the DB.
 // exports.update = function(req, res) {
 //   if(req.body._id) { delete req.body._id; }

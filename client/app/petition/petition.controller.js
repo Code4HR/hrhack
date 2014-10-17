@@ -3,6 +3,12 @@
 angular.module('hrhackApp')
   .controller('PetitionCtrl', ['petitions', '$scope', '$state', 'Auth', function(petitions, $scope, $state, Auth) {
 
+    //Blame Gary
+    $scope.width = window.innerWidth;
+    window.addEventListener('resize', function(){
+      $scope.width = window.innerWidth;
+    });
+
     petitions.get($state.params.id).then(function(item) {
       $scope.petition = item.petition;
       var signaturesAmt = Math.round(item.petition.stats.signatureCount / item.petition.stats.targetSignatureCount * 100),

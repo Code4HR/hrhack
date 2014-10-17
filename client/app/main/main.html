@@ -6,6 +6,7 @@
     <div class="slider" ng-controller="CarouselCtrl">
         <carousel interval="myInterval">
             <slide style="background: #000;" ng-repeat="slide in slides" active="slide.active">
+                <a href="/petition/{{slide.id}}">
                 <img style="opacity: .6 ;" src="{{slide.image}}">
                 <div class="carousel-caption">
                     <p class="slide-category">{{slide.category}}</p>
@@ -13,6 +14,7 @@
                     <p class="slide-description">{{slide.description}}</p>
                     <p class="slide-location">{{slide.location}}</p>
                 </div>
+                </a>
             </slide>
         </carousel>
     </div>
@@ -24,7 +26,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>How It Works</h2>
-                <h5 class="" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                <h5 class="section-subheading text-muted" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             </div>
         </div>
         <div class="row text-center">
@@ -69,13 +71,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Latest Projects</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2>Latest Projects</h2>
+                <h5 class="section-subheading text-muted" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
             </div>
         </div>
         <div class="row" ng-controller="CarouselCtrl">
             <div ng-repeat="slide in slides" class="col-md-4 col-sm-6 portfolio-item">
-                <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                <a href="/petition/{{slide.id}}#page-top" class="portfolio-link">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
@@ -85,7 +87,6 @@
                 </a>
                 <div class="portfolio-caption">
                     <h4>{{slide.title}}</h4>
-                    <h5 class="">Lorem ipsum dolor sit amet.</h5>
                     <p>{{slide.description}}</p>
                     <div class="petition-signatures">
                         <h5>Signature Progress</h5>

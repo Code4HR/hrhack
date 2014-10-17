@@ -20,7 +20,8 @@ function CarouselCtrl($scope, petitions) {
 				category: item.petition.category,
 				signatures: signaturesAmt,
 				funding: fundingAmt,
-				signaturesMet: signaturesAmt < 100 ? false : true
+				signaturesMet: signaturesAmt < 100 ? false : true,
+				id: item._id['$oid']
 			});
 		});
 	});

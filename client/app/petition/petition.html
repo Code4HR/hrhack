@@ -7,56 +7,64 @@
               {{ petition.location.city }}
             </div>
             <div class="intro-heading">{{ petition.name }}</div>
-            <a href="#sign" data-toggle="modal" class="page-scroll btn btn-xl" ng-hide="paymentMade">Sign The Petition</a>
-            <a href="#sign" data-toggle="modal" class="page-scroll btn btn-xl" ng-show="paymentMade" disable>You Signed This Petition</a>
+            <a href="#sign" data-toggle="modal" class="page-scroll btn btn-xl" ng-hide="paymentMade || petition.signatures.success">Sign The Petition</a>
+            <a class="page-scroll btn btn-xl" ng-show="paymentMade" disabled>You Signed This Petition</a>
+            <div class="alert alert-success" ng-show="petition.signatures.success" role="alert">This petition gained necessary support. Thankyou!</div>
         </div>
     </div>
 </header>
-
 <section id="team" class="bg-light-gray" style="padding:30px">
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
         <div class="row">
           <div class="col-12">
-            <h2 style="padding-bottom:10px;">Description</h1>
-            <p class="large text-muted">{{ petition.description }}</p>
+            <h2 style="">{{ petition.name }}</h2>
+            <p class="">{{ petition.longDescription }}</p>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-lg-offset-1">
         <div class="row">
           <div class="col-12">
+            <div class="petition-signatures">
             <h4>Signature Progress</h4>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                <span class="sr-only">60% Complete</span>
-              </div>
-            </div>
+            <progressbar class="progress-striped active" animate="true" max="100" value="petition.signatures.amt" type="{{petition.signatures.success ? 'success' : 'danger'}}"><i><span count-to="{{petition.signatures.amt}}" duration="1" count-from="{{0}}"></span>{{petition.signatures.amt}}%</i></progressbar>
+        </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <a href="#sign" class="page-scroll btn btn-xl" data-toggle="modal" ng-hide="paymentMade">Sign The Petition</a>
+            <a href="#sign" class="page-scroll btn btn-xl" data-toggle="modal" ng-hide="paymentMade || petition.signatures.success">Sign The Petition</a>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
+          <div ng-class="{'grayedOut': !petition.signatures.success}" class="petition-funding">
             <h4>Funding Progress</h4>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-                <span class="sr-only">10% Complete</span>
-              </div>
-            </div>
+            <progressbar class="progress-striped active" animate="true" max="100" value="petition.funding.amt" type="{{petition.funding.success ? 'success' : 'danger'}}"><i><span count-to="{{petition.funding.amt}}" duration="1" count-from="{{0}}"></span>{{petition.funding.amt}}%</i></progressbar>
+        </div>
+          </div>
+        </div>
+            <div class="row">
+          <div class="col-12">
+            <a ng-show="!petition.signatures.success" href="#signApetition" class="page-scroll btn btn-xl col-12" data-toggle="modal">Sign The Petition</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
+<section>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-12">
+      <h2 style="padding-bottom:10px;">Risks & Challenges</h2>
+        <p>Projects on Civic Starter are community-driven. This means that when a project petition meets it signature and funding goals, we work with local government liaisons get the project green lighted and underway as soon as possible. Due to the differences in how each municipality works, Civic Starter's efforts to pushes your project to the front of the line may be met with locality-specific challenges such as complying with ordinances, zoning code regulations, and other laws.</p>
+      </div></div></div></div>
+    </div>
 </section>
 
 <section id="backers" class="bg-darkest-gray" style="padding:30px">
@@ -230,13 +238,9 @@
                           </div>
 
                         </div>
-                        <p></p>
-                        <p>We charge $1 to your debit or credit card account to validate your local status. This is a one-time charge for your first petition signature only.</p>
-                        <div class="row" style="margin:25px">
-                          <div class="col-lg-4 col-lg-offset-4">
-                            <button type="button" class="btn btn-primary" style="width:200px" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                          </div>
-                        </div>
+                        <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
+                        <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                     </div>
                 </div>
             </div>

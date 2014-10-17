@@ -7,7 +7,8 @@
               {{ petition.location.city }}
             </div>
             <div class="intro-heading">{{ petition.name }}</div>
-            <a href="#signApetition" class="page-scroll btn btn-xl" data-toggle="modal">Sign The Petition</a>
+            <a href="#sign" data-toggle="modal" class="page-scroll btn btn-xl" ng-hide="paymentMade">Sign The Petition</a>
+            <a href="#sign" data-toggle="modal" class="page-scroll btn btn-xl" ng-show="paymentMade" disable>You Signed This Petition</a>
         </div>
     </div>
 </header>
@@ -36,7 +37,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <a href="#services" class="page-scroll btn btn-xl">Sign The Petition</a>
+            <a href="#sign" class="page-scroll btn btn-xl" data-toggle="modal" ng-hide="paymentMade">Sign The Petition</a>
           </div>
         </div>
         <div class="row">
@@ -158,7 +159,7 @@
 
 
 <!-- Portfolio Modal 6 -->
-<div class="portfolio-modal modal fade" id="signApetition" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="sign" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
             <div class="lr">
@@ -176,7 +177,7 @@
 
                         <div class="row">
                           <div class="col-lg-12">
-                              <form role="form">
+                              <form role="form" ng-hide="paymentMade">
                                   <div class="form-group">
                                       <label>Cardholder's Name</label>
                                       <input type="text" class="form-control" value="{{ getCurrentUser().name }}">
@@ -220,10 +221,12 @@
                                   </div>
                                   <div class="row" style="margin:25px">
                                     <div class="col-lg-4 col-lg-offset-4">
-                                      <button type="submit" class="btn btn-primary" style="width:200px">Pay Now</button>
+                                      <button type="submit" class="btn btn-primary" style="width:200px" ng-click="submitPayment()">Pay Now</button>
+
                                     </div>
                                   </div>
                               </form>
+                              <div ng-show="paymentMade" class="alert alert-success" role="alert">Petition Signed Successfully</div>
                           </div>
 
                         </div>

@@ -18,7 +18,7 @@ var key = '?apiKey=' + process.env.API_KEY;
 exports.index = function(req, res) {
 
   request(apiUrlBase + key, function(error, response, body) {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode === 200) {
       var petitions = JSON.parse(body);
       return res.json(200, petitions);
     }
@@ -31,11 +31,11 @@ exports.index = function(req, res) {
 exports.show = function(req, res) {
 
   request(apiUrlBase + '/' + req.params.id + key, function(error, response, body) {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode === 200) {
       var petition = JSON.parse(body);
       return res.json(200, petition);
     }
-    
+
     handleError(res, response.statusCode, error);
   });
 };
@@ -49,10 +49,10 @@ exports.create = function(req, res) {
     json: req.body
   };
   request(options, function(error, response, body) {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode === 200) {
       return res.json(200, body);
     }
-    
+
     handleError(res, response.statusCode, error);
   });
 };

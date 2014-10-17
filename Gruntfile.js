@@ -111,6 +111,13 @@ module.exports = function (grunt) {
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
+        '-W002': true, // IE8 and earlier issue
+        '-W044': true, // Bad / unnecessary escaping
+        '-W069': true, // dot notation,
+        '-W084': true, // expected a conditional
+        '-W061': true, // eval can be harmful
+        '-W030': true, // expected assignment for function call
+        asi: true,     // tolerate missing simicolons
         jshintrc: '<%= yeoman.client %>/.jshintrc',
         reporter: require('jshint-stylish')
       },
@@ -610,8 +617,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
     'build'
   ]);
 };

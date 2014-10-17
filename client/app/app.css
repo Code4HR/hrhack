@@ -99,7 +99,7 @@
 }
 
 .fa-blue {
-    color: rgba(63, 131, 179, .75);    
+    color: rgba(63, 131, 179, .75);
 }
 
 .fa-green {
@@ -107,11 +107,11 @@
 }
 
 .fa-yellow {
-    color: rgba(254, 209, 54, 0.75);    
+    color: rgba(254, 209, 54, 0.75);
 }
 
 .fa-red {
-    color: rgba(179, 63, 63, 0.75)   
+    color: rgba(179, 63, 63, 0.75)
 }
 
 h5.section-subheading {
@@ -123,7 +123,7 @@ h5.section-subheading {
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
-}   
+}
 
 .slide-category {
     background: rgba(49, 155, 75, 0.75);

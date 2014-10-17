@@ -31,7 +31,17 @@
  * App-wide Styles
  */
 
+.portfolio-caption > div {
+    margin-top: 10px;
+}
 
+.portfolio-caption > div > h5 {
+    font-size: .75em;
+}
+
+.grayedOut {
+    color: rgba(128, 128, 128, 0.57) !important;
+}
 
 .fa-blue {
     color: rgba(63, 131, 179, .75);    

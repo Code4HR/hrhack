@@ -67,8 +67,7 @@
     </div>
     <div class="row">
       <div class="col-sm-1" ng-repeat="signer in petition.signedBy">
-        <div class="team-member">
-            {{ signer.userDetail.nameFirst }} {{ signer.userDetail.nameLast }}
+        <div class="team-member" data-toggle="tooltip" data-placement="top" title="{{ signer.userDetail.nameFirst }} {{ signer.userDetail.nameLast }}">
             <img src="{{ signer.userDetail.profileImage }}" class="img-responsive img-circle" alt="">
         </div>
       </div>
@@ -169,47 +168,64 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-6 col-md-offset-3">
                     <div class="modal-body">
                         <!-- Project Details Go Here -->
                         <h2>{{ petition.name }}</h2>
                         <p class="item-intro text-muted">{{ petition.description }}</p>
+
                         <div class="row">
-                          <div class="col-md-12">
+                          <div class="col-lg-12">
                               <form role="form">
                                   <div class="form-group">
                                       <label>Cardholder's Name</label>
-                                      <input type="text" class="form-control">
+                                      <input type="text" class="form-control" placeholder="Vamsi Sri Harsha Vidala">
                                   </div>
                                   <div class="form-group">
-                                      <label>Card Number</label>
-                                      <input type="text" class="form-control">
+                                      <label>Billing Address</label>
+                                      <input type="text" class="form-control" placeholder="10 Downing Street, London, UK">
                                   </div>
                                   <div class="row">
-                                      <div class="col-md-4">
-                                          <div class="form-group">
-                                              <label>Exp Month</label>
-                                              <input type="text" class="form-control" placeholder="MM">
-                                          </div>
+                                    <div class="col-lg-6">
+                                      <div class="form-group">
+                                        <label>Card Number </label>
+                                        <input type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx">
                                       </div>
-                                      <div class="col-md-4">
-                                          <div class="form-group">
-                                              <label>Exp Year</label>
-                                              <input type="text" class="form-control" placeholder="YYYY">
-                                          </div>
-                                      </div>
-                                      <div class="col-md-4">
-                                          <div class="form-group">
-                                              <label>CVC</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>CVC</label>
+                                            <div class="input-group">
+                                              <a href="#" class="input-group-addon">
+                                                <i class="fa fa-credit-card"></i>
+                                              </a>
                                               <input type="text" class="form-control" placeholder="Ex. 331">
-                                          </div>
-                                      </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>Expiration</label>
+                                            <input type="text" class="form-control" placeholder="MM-YYYY">
+                                        </div>
+                                    </div>
                                   </div>
-                                  <button type="submit" class="btn btn-primary">Pay Now</button>
+                                  <div class="row">
+                                    <div class="col-lg-6">
+                                      <i class="fa fa-cc-visa fa-2x"></i>
+                                      <i class="fa fa-cc-mastercard fa-2x"></i>
+                                      <i class="fa fa-cc-amex fa-2x"></i>
+                                      <i class="fa fa-cc-discover fa-2x"></i>
+                                    </div>
+                                  </div>
+                                  <div class="row" style="margin:25px">
+                                    <div class="col-lg-4 col-lg-offset-4">
+                                      <button type="submit" class="btn btn-primary" style="width:200px">Pay Now</button>
+                                    </div>
+                                  </div>
                               </form>
                           </div>
-                          <div class="col-md-12" />
-                          <div class="col-md-12" />
+
                         </div>
                         <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
                         <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>

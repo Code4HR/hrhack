@@ -3,6 +3,10 @@
 angular.module('hrhackApp')
 	.controller('PetitionCtrl', ['petitions', '$scope', '$state',
 		function(petitions, $scope, $state) {
+			$scope.width = window.innerWidth;
+			window.addEventListener('resize', function(){
+				$scope.width = window.innerWidth;
+			});
 			petitions.get($state.params.id).then(function(item) {
 				$scope.petition = item.petition;
 

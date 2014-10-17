@@ -88,11 +88,11 @@
                     <p>{{slide.description}}</p>
                     <div class="petition-signatures">
                         <h5>Signature Progress</h5>
-                        <progressbar class="progress-striped active" animate="true" max="100" value="slide.signatures" type="success"><i><span count-to="{{slide.signatures}}" duration="1" count-from="{{0}}"></span>{{slide.signatures}}%</i></progressbar>
+                        <progressbar class="progress-striped active" animate="true" max="100" value="slide.signatures.amt" type="{{slide.signatures.success ? 'success' : 'danger'}}"><i><span count-to="{{slide.signatures.amt}}" duration="1" count-from="{{0}}"></span>{{slide.signatures.amt}}%</i></progressbar>
                     </div>
-                    <div ng-class="{'grayedOut': !slide.signaturesMet}" class="petition-funding">
+                    <div ng-class="{'grayedOut': !slide.funding.success}" class="petition-funding">
                         <h5>Funding Progress</h5>
-                        <progressbar class="progress-striped active" animate="true" max="100" value="slide.funding" type="success"><i><span count-to="{{slide.funding}}" duration="1" count-from="{{0}}"></span>{{slide.funding}}%</i></progressbar>
+                        <progressbar class="progress-striped active" animate="true" max="100" value="slide.funding.amt" type="{{slide.funding.success ? 'success' : 'danger'}}"><i><span count-to="{{slide.funding.amt}}" duration="1" count-from="{{0}}"></span>{{slide.funding.amt}}%</i></progressbar>
                     </div>
                 </div>
             </div>

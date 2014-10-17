@@ -18,9 +18,14 @@ function CarouselCtrl($scope, petitions) {
 				image: item.petition.image[0].fileName,
 				location: item.petition.location.city + ', ' + item.petition.location.state,
 				category: item.petition.category,
-				signatures: signaturesAmt,
-				funding: fundingAmt,
-				signaturesMet: signaturesAmt < 100 ? false : true,
+				signatures: {
+					amt: signaturesAmt,
+					success : signaturesAmt < 100 ? false : true
+				},
+				funding: {
+					amt: fundingAmt,
+					success: fundingAmt < 100 ? false : true
+				},
 				id: item._id['$oid']
 			});
 		});

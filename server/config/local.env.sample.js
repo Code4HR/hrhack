@@ -10,5 +10,6 @@ module.exports = {
   SESSION_SECRET:   'hrhack-secret',
 
   // Control debug level for modules using visionmedia/debug
-  DEBUG: ''
+  DEBUG: '',
+  API_KEY: '9rLkL7jBXiss089QQhpDsvrsKZjegWW1'
 };

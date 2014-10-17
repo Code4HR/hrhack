@@ -12,7 +12,7 @@
 var _ = require('lodash');
 var request = require('request');
 var apiUrlBase = 'https://api.mongolab.com/api/1/databases/civicstarter/collections/Petition';
-var key = '?apiKey=9rLkL7jBXiss089QQhpDsvrsKZjegWW1';
+var key = '?apiKey=' + process.env.API_KEY;
 
 // Get list of things
 exports.index = function(req, res) {

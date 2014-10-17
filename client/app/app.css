@@ -72,6 +72,16 @@
  * App-wide Styles
  */
 
+ .keep-me-notified {
+    width: 30% !important;
+    display: block;
+    background-color: rgba(254, 209, 54, 0.75);
+    color: #fff;
+    border-radius: 4px;
+    margin: 10px auto;
+    padding: 5px;
+ }
+
 .portfolio-caption > div {
     margin-top: 10px;
 }
@@ -124,6 +134,10 @@ h5.section-subheading {
     border-radius: 8px;
     margin: auto;
     font-family: 'Helvetica';
+}
+
+.long-category {
+    min-width: 250px;
 }
 
 .slide-title {
@@ -185,6 +199,9 @@ h5.section-subheading {
     .slide-category {
         font-size: 1.2em;
         max-width: 200px;
+    }
+    .long-category {
+        min-width: 450px;
     }
 }
 

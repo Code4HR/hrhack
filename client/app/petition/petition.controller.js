@@ -34,12 +34,14 @@ angular.module('hrhackApp')
       var pieces = name.split(' ');
       signer.userDetail.nameFirst = pieces[0];
       signer.userDetail.nameLast = pieces[1];
+      $scope.petition.stats.signatureCount++;
       $scope.petition.signedBy.push(signer);
 
       var obj = {
         petition: $scope.petition
       }
-      petitions.create(obj).then(function() {
+      petitions.update($state.params.id, obj).then(function(data) {
+        console.log(data);
         $scope.paymentMade = true;
       });
     }

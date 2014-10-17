@@ -35,11 +35,6 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <a href="#sign" class="page-scroll btn btn-xl" data-toggle="modal" ng-hide="paymentMade || petition.signatures.success">Sign The Petition</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
           <div ng-class="{'grayedOut': !petition.signatures.success}" class="petition-funding">
             <h4>Funding Progress</h4>
             <progressbar class="progress-striped active" animate="true" max="100" value="petition.funding.amt" type="{{petition.funding.success ? 'success' : 'danger'}}"><i><span count-to="{{petition.funding.amt}}" duration="1" count-from="{{0}}"></span>{{petition.funding.amt}}%</i></progressbar>
@@ -48,7 +43,7 @@
         </div>
             <div class="row">
           <div class="col-12">
-            <a ng-show="!petition.signatures.success" href="#signApetition" class="page-scroll btn btn-xl col-12" data-toggle="modal">Sign The Petition</a>
+            <a href="#sign" class="page-scroll btn btn-xl" data-toggle="modal" ng-hide="paymentMade || petition.signatures.success">Sign The Petition</a>
           </div>
         </div>
       </div>

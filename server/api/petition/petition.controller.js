@@ -20,7 +20,7 @@ exports.index = function(req, res) {
   request(apiUrlBase + key, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       var petitions = JSON.parse(body);
-      res.json(200, petitions);
+      return res.json(200, petitions);
     }
 
     handleError(res, response.statusCode, error);
@@ -33,7 +33,7 @@ exports.show = function(req, res) {
   request(apiUrlBase + '/' + req.params.id + key, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       var petition = JSON.parse(body);
-      res.json(200, petition);
+      return res.json(200, petition);
     }
     
     handleError(res, response.statusCode, error);
@@ -50,7 +50,7 @@ exports.create = function(req, res) {
   };
   request(options, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      res.json(200, body);
+      return res.json(200, body);
     }
     
     handleError(res, response.statusCode, error);
@@ -84,5 +84,5 @@ exports.create = function(req, res) {
 // };
 
 function handleError(res, code, err) {
-  return res.send(code, err);
+  return res.status(code).send(err);
 }

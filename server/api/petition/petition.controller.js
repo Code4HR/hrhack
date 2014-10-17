@@ -20,8 +20,10 @@ exports.index = function(req, res) {
   request(apiUrlBase + key, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       var petitions = JSON.parse(body);
-      res.json(200, petitions);
+      return res.json(200, petitions);
     }
+
+    handleError(res, response.statusCode, error);
   });
 };
 
@@ -31,28 +33,27 @@ exports.show = function(req, res) {
   request(apiUrlBase + '/' + req.params.id + key, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       var petition = JSON.parse(body);
-      res.json(200, petition);
+      return res.json(200, petition);
     }
+    
+    handleError(res, response.statusCode, error);
   });
-
-  // Thing.findById(req.params.id, function(err, thing) {
-  //   if (err) {
-  //     return handleError(res, err);
-  //   }
-  //   if (!thing) {
-  //     return res.send(404);
-  //   }
-  //   return res.json(thing);
-  // });
 };
 
 // Creates a new thing in the DB.
 exports.create = function(req, res) {
-  Thing.create(req.body, function(err, thing) {
-    if (err) {
-      return handleError(res, err);
+
+  var options = {
+    uri: apiUrlBase + key,
+    method: 'POST',
+    json: req.body
+  };
+  request(options, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      return res.json(200, body);
     }
-    return res.json(201, thing);
+    
+    handleError(res, response.statusCode, error);
   });
 };
 
@@ -82,6 +83,6 @@ exports.create = function(req, res) {
 //   });
 // };
 
-function handleError(res, err) {
-  return res.send(500, err);
+function handleError(res, code, err) {
+  return res.status(code).send(err);
 }

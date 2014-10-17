@@ -38,7 +38,7 @@ function PetitionsService($q, $http) {
 
   var create = function(petition) {
     var defer = $q.defer();
-    var requestUri = apiUrlBase + key;
+    var requestUri = '/api/petitions/';
 
     $http.post(requestUri, petition).success(function(response) {
       defer.resolve(response);

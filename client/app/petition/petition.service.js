@@ -1,7 +1,7 @@
 'use strict';
 
 function PetitionsService($q, $http) {
-  
+
   var getAll = function() {
     var defer = $q.defer();
     var requestUri = '/api/petitions';
@@ -49,9 +49,23 @@ function PetitionsService($q, $http) {
     return defer.promise;
   };
 
+  var update = function(id, petition) {
+    var defer = $q.defer();
+    var requestUri = '/api/petitions/' + id;
+
+    $http.put(requestUri, petition).success(function(response) {
+      defer.resolve(response);
+    }).error(function(error) {
+      defer.reject(error);
+    });
+
+    return defer.promise;
+  };
+
   return {
     get: get,
-    create: create
+    create: create,
+    update: update
   };
 }
 

@@ -1,13 +1,15 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-
-<div class="container">
+<header>
+<div class="container intro-text" style="padding-top:200px">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6 col-sm-offset-3">
       <h1>Login</h1>
+      <!--
       <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
       <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
+    -->
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-6 col-sm-offset-3">
       <form class="form" name="form" ng-submit="login(form)" novalidate>
 
         <div class="form-group">
@@ -47,3 +49,4 @@
   </div>
   <hr>
 </div>
+</header>
